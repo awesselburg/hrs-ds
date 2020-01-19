@@ -3,6 +3,7 @@
 namespace MyPortal\HRS_Api\Service\V2;
 
 use MyPortal\HRS_Api\Client;
+use MyPortal\HRS_Api\V2\Schema\ResponseError;
 
 /**
  * Class Service
@@ -17,11 +18,28 @@ class Service extends \MyPortal\HRS_Api\Service\Service
     public function call()
     {
         try {
-            return $this->getClient()->request(self::METHOD, static::URI, [
+            $response = $this->getClient()->request(self::METHOD, static::URI, [
                 'body' => \GuzzleHttp\json_encode($this->getRequestObject()->createJsonPayload()),
             ]);
+            $this->setResponse(json_decode($response->getBody()->getContents()));
         } catch (\Exception $e) {
-            die ($e->getMessage());
+            $error = new ResponseError();
+            //$this->setResponse(ResponseError::class);
+            //die ($e->getMessage());
         }
+    }
+
+    /**
+     * @param $response
+     *
+     * @throws \JsonMapper_Exception
+     */
+    protected function setResponse($response)
+    {
+        $mapper        = new \JsonMapper();
+        $responseClass = get_class($this->responseObject);
+        $this->setResponseObject(
+            $mapper->map($response, new $responseClass)
+        );
     }
 }

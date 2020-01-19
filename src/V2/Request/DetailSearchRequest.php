@@ -3,8 +3,8 @@
 namespace MyPortal\HRS_Api\V2\Request;
 
 use MyPortal\HRS_Api\Helper\Object;
-use MyPortal\HRS_Api\V2\Request\Schema\RoomDetailCriteria;
-use MyPortal\HRS_Api\V2\Request\Schema\TravelCriteria;
+use MyPortal\HRS_Api\V2\Schema\RoomDetailCriteria;
+use MyPortal\HRS_Api\V2\Schema\TravelCriteria;
 
 /**
  * Class DetailSearchRequest

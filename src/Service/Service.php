@@ -21,6 +21,11 @@ class Service
     protected $requestObject;
 
     /**
+     * @var Object
+     */
+    protected $responseObject;
+
+    /**
      * Service constructor.
      *
      * @param Client $client
@@ -45,6 +50,22 @@ class Service
     public function setRequestObject($requestObject)
     {
         $this->requestObject = $requestObject;
+    }
+    
+    /**
+     * @return Object
+     */
+    public function getResponseObject()
+    {
+        return $this->responseObject;
+    }
+
+    /**
+     * @param Object $responseObject
+     */
+    public function setResponseObject($responseObject)
+    {
+        $this->responseObject = $responseObject;
     }
 
     /**

@@ -1,13 +1,13 @@
 <?php
 
-namespace MyPortal\HRS_Api\V2\Request\Schema;
+namespace MyPortal\HRS_Api\V2\Schema;
 
 use MyPortal\HRS_Api\Helper\Object;
 
 /**
  * Class TravelCriteria
  *
- * @package MyPortal\HRS_Api\V2\Request\Schema
+ * @package MyPortal\HRS_Api\V2\Schema
  */
 class TravelCriteria extends Object
 {

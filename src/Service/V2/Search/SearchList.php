@@ -4,6 +4,7 @@ namespace MyPortal\HRS_Api\Service\V2\Search;
 
 use MyPortal\HRS_Api\V2\Request\ListSearchRequest;
 use MyPortal\HRS_Api\Service\V2\Service;
+use MyPortal\HRS_Api\V2\Response\ListSearchResponse;
 
 /**
  * Class SearchList
@@ -17,7 +18,8 @@ class SearchList extends Service
     public function __construct($client)
     {
         parent::__construct($client);
-        $this->requestObject = new ListSearchRequest();
+        $this->requestObject  = new ListSearchRequest();
+        $this->responseObject = new ListSearchResponse();
     }
 
     /**
@@ -34,5 +36,23 @@ class SearchList extends Service
     public function setListSearchRequest($listSearchRequest)
     {
         $this->requestObject = $listSearchRequest;
+    }
+
+    /**
+     * @return ListSearchResponse
+     */
+    public function getListSearchResponse()
+    {
+        return $this->responseObject;
+    }
+
+    /**
+     * @param ListSearchResponse $detailSearchResponse
+     *
+     * @throws \JsonMapper_Exception
+     */
+    public function setListSearchResponse($listSearchResponse)
+    {
+        $this->setResponse($listSearchResponse);
     }
 }

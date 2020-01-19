@@ -1,13 +1,13 @@
 <?php
 
-namespace MyPortal\HRS_Api\Request\Schema;
+namespace MyPortal\HRS_Api\Schema;
 
 use MyPortal\HRS_Api\Helper\Object;
 
 /**
  * Class GuestName
  *
- * @package MyPortal\HRS_Api\Request\Schema
+ * @package MyPortal\HRS_Api\Schema
  */
 class GuestName extends Object
 {

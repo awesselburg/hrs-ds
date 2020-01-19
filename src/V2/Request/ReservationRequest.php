@@ -3,10 +3,10 @@
 namespace MyPortal\HRS_Api\V2\Request;
 
 use MyPortal\HRS_Api\Helper\Object;
-use MyPortal\HRS_Api\V2\Request\Schema\CreditCardCriteria;
-use MyPortal\HRS_Api\V2\Request\Schema\PersonCriteria;
-use MyPortal\HRS_Api\V2\Request\Schema\ReservationOfferCriteria;
-use MyPortal\HRS_Api\V2\Request\Schema\SellingInfo;
+use MyPortal\HRS_Api\V2\Schema\CreditCardCriteria;
+use MyPortal\HRS_Api\V2\Schema\PersonCriteria;
+use MyPortal\HRS_Api\V2\Schema\ReservationOfferCriteria;
+use MyPortal\HRS_Api\V2\Schema\SellingInfo;
 
 /**
  * Class ReservationRequest
