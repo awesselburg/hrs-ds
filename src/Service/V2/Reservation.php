@@ -3,6 +3,8 @@
 namespace MyPortal\HRS_Api\Service\V2;
 
 use MyPortal\HRS_Api\V2\Request\ReservationRequest;
+use MyPortal\HRS_Api\V2\Response\ReservationResponse;
+use MyPortal\HRS_Api\V2\Schema\ResponseError;
 
 /**
  * Class Reservation
@@ -16,7 +18,8 @@ class Reservation extends Service
     public function __construct($client)
     {
         parent::__construct($client);
-        $this->requestObject = new ReservationRequest();
+        $this->requestObject  = new ReservationRequest();
+        $this->responseObject = new ReservationResponse();
     }
 
     /**
@@ -33,5 +36,21 @@ class Reservation extends Service
     public function setReservationRequest($reservationRequest)
     {
         $this->requestObject = $reservationRequest;
+    }
+
+    /**
+     * @return ReservationResponse
+     */
+    public function getReservationResponse()
+    {
+        return $this->responseObject;
+    }
+
+    /**
+     * @return ReservationResponse | ResponseError
+     */
+    public function getResponse()
+    {
+        return $this->responseObject;
     }
 }

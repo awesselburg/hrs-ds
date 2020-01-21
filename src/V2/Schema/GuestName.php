@@ -1,35 +1,35 @@
 <?php
 
-namespace MyPortal\HRS_Api\Schema;
+namespace MyPortal\HRS_Api\V2\Schema;
 
-use MyPortal\HRS_Api\Helper\Object;
+use MyPortal\HRS_Api\Helper\Model;
 
 /**
  * Class GuestName
  *
  * @package MyPortal\HRS_Api\Schema
  */
-class GuestName extends Object
+class GuestName extends Model
 {
     /**
      * @var string
      */
-    protected $age;
+    public $age;
 
     /**
      * @var string
      */
-    protected $salutationCode;
+    public $salutationCode;
 
     /**
      * @var string
      */
-    protected $firstName;
+    public $firstName;
 
     /**
      * @var string
      */
-    protected $lastName;
+    public $lastName;
 
     /**
      * @return string

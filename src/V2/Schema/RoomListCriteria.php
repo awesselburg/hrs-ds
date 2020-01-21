@@ -2,29 +2,29 @@
 
 namespace MyPortal\HRS_Api\V2\Schema;
 
-use MyPortal\HRS_Api\Helper\Object;
+use MyPortal\HRS_Api\Helper\Model;
 
 /**
  * Class RoomListCriteria
  *
  * @package MyPortal\HRS_Api\V2\Schema
  */
-class RoomListCriteria extends Object
+class RoomListCriteria extends Model
 {
     /**
      * @var array
      */
-    protected $accommodationIds = [];
+    public $accommodationIds = [];
 
     /**
      * @var array
      */
-    protected $roomIds = [];
+    public $roomIds = [];
 
     /**
      * @var array
      */
-    protected $regionNames = [];
+    public $regionNames = [];
 
     /**
      * @return array

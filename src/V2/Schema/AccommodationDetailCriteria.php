@@ -2,24 +2,24 @@
 
 namespace MyPortal\HRS_Api\V2\Schema;
 
-use MyPortal\HRS_Api\Helper\Object;
+use MyPortal\HRS_Api\Helper\Model;
 
 /**
  * Class AccommodationDetailCriteria
  *
  * @package MyPortal\HRS_Api\V2\Schema
  */
-class AccommodationDetailCriteria extends Object
+class AccommodationDetailCriteria extends Model
 {
     /**
      * @var string
      */
-    protected $accommodationId;
+    public $accommodationId;
 
     /**
      * @var array
      */
-    protected $roomIds = [];
+    public $roomIds = [];
 
     /**
      * @return array
@@ -54,7 +54,7 @@ class AccommodationDetailCriteria extends Object
     }
 
     /**
-     * @param $accommodationId
+     * @param string $accommodationId
      */
     public function setAccommodationId($accommodationId)
     {

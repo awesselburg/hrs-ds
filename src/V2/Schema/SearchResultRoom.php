@@ -2,15 +2,28 @@
 
 namespace MyPortal\HRS_Api\V2\Schema;
 
-use MyPortal\HRS_Api\Helper\Object;
+use MyPortal\HRS_Api\Helper\Model;
 
 /**
  * Class Payment
  *
  * @package MyPortal\HRS_Api\V2\Schema
  */
-class SearchResultRoom extends Object
+class SearchResultRoom extends Model
 {
+    const PROMOTION_TYPE_LAST_MINUTE            = 'LAST_MINUTE';
+    const PROMOTION_TYPE_EARLY_BOOKING          = 'EARLY_BOOKING';
+    const PROMOTION_TYPE_GENERAL                = 'GENERAL';
+    const CATERING_TYPE_NO_BOARD                = 'NO_BOARD';
+    const CATERING_TYPE_BREAKFAST               = 'BREAKFAST';
+    const CATERING_TYPE_HALF_BOARD              = 'HALF_BOARD';
+    const CATERING_TYPE_THREE_QUARTER_BOARD     = 'THREE_QUARTER_BOARD';
+    const CATERING_TYPE_FULL_BOARD              = 'FULL_BOARD';
+    const CATERING_TYPE_TALL_INCLUSIVE          = 'ALL_INCLUSIVE';
+    const RESERVATION_TYPE_STANDARD             = 'STANDARD';
+    const RESERVATION_TYPE_REJECTABLE_BY_VENDOR = 'REJECTABLE_BY_VENDOR';
+    const RESERVATION_TYPE_ON_REQUEST           = 'ON_REQUEST';
+
     /**
      * @var string
      */
@@ -32,7 +45,7 @@ class SearchResultRoom extends Object
     public $cateringType;
 
     /**
-     * @var float
+     * @var string
      */
     public $promotionType;
 
@@ -121,7 +134,7 @@ class SearchResultRoom extends Object
     }
 
     /**
-     * @return float
+     * @return string
      */
     public function getPromotionType()
     {
@@ -129,7 +142,7 @@ class SearchResultRoom extends Object
     }
 
     /**
-     * @param float $promotionType
+     * @param string $promotionType
      */
     public function setPromotionType($promotionType)
     {

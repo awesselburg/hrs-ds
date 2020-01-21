@@ -2,15 +2,19 @@
 
 namespace MyPortal\HRS_Api\V2\Schema;
 
-use MyPortal\HRS_Api\Helper\Object;
+use MyPortal\HRS_Api\Helper\Model;
 
 /**
  * Class Document
  *
  * @package MyPortal\HRS_Api\V2\Schema
  */
-class SearchResultAccommodation extends Object
+class SearchResultAccommodation extends Model
 {
+    const PROMOTION_TYPE_LAST_MINUTE   = 'LAST_MINUTE';
+    const PROMOTION_TYPE_EARLY_BOOKING = 'EARLY_BOOKING';
+    const PROMOTION_TYPE_GENERAL       = 'GENERAL';
+
     /**
      * @var string
      */

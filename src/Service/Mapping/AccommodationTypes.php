@@ -10,12 +10,12 @@ namespace MyPortal\HRS_Api\Service\Mapping;
 class AccommodationTypes extends AbstractMapping
 {
     protected $data = [
-        1 => 'Hotel',
-        2 => 'Ferienwohnung',
-        5 => 'Ferienhaus',
-        7 => 'Gasthof',
-        8 => 'Pension/Gästehaus',
-        9 => 'hotelgarni',
+        1  => 'Hotel',
+        2  => 'Ferienwohnung',
+        5  => 'Ferienhaus',
+        7  => 'Gasthof',
+        8  => 'Pension/Gästehaus',
+        9  => 'hotelgarni',
         10 => 'Bungalow',
         11 => 'Appartement',
         12 => 'Jugendhotel',

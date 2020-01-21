@@ -10,12 +10,12 @@ namespace MyPortal\HRS_Api\Service\Mapping;
 class Targetgroups extends AbstractMapping
 {
     protected $data = [
-        2 => 'Wellness/Fitness/Gesundheit',
-        3 => 'Gourmet/Genießer',
-        4 => 'Kultur',
-        7 => 'Sonstiges',
-        8 => 'Natur(park)',
-        9 => 'Sport und Spiel',
+        2  => 'Wellness/Fitness/Gesundheit',
+        3  => 'Gourmet/Genießer',
+        4  => 'Kultur',
+        7  => 'Sonstiges',
+        8  => 'Natur(park)',
+        9  => 'Sport und Spiel',
         10 => 'Familie/Kinder',
         11 => 'Angeln/Jagd',
         13 => 'Strand und Baden',

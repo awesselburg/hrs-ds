@@ -2,9 +2,7 @@
 
 namespace MyPortal\HRS_Api\V2\Response;
 
-use MyPortal\HRS_Api\V2\Schema\TravelCriteria;
-
-class AvailabilitySearchResponse
+class AvailabilitySearchResponse extends AbstractResponse
 {
     /**
      * @var string
@@ -17,14 +15,30 @@ class AvailabilitySearchResponse
     public $idsOfVacantRooms = [];
 
     /**
-     * @var \MyPortal\HRS_Api\V2\Schema\RequestInfo
-     */
-    public $requestInfo;
-
-    /**
      * @var \MyPortal\HRS_Api\V2\Schema\TravelCriteria
      */
     public $searchCriteria;
+
+    /**
+     * @var \MyPortal\HRS_Api\V2\Schema\NotBookableRoom[]
+     */
+    public $notBookableRooms = [];
+
+    /**
+     * @return \MyPortal\HRS_Api\V2\Schema\NotBookableRoom[]
+     */
+    public function getNotBookableRooms()
+    {
+        return $this->notBookableRooms;
+    }
+
+    /**
+     * @param \MyPortal\HRS_Api\V2\Schema\NotBookableRoom[] $notBookableRooms
+     */
+    public function setNotBookableRooms($notBookableRooms)
+    {
+        $this->notBookableRooms = $notBookableRooms;
+    }
 
     /**
      * @return string
@@ -56,22 +70,6 @@ class AvailabilitySearchResponse
     public function setIdsOfVacantRooms($idsOfVacantRooms)
     {
         $this->idsOfVacantRooms = $idsOfVacantRooms;
-    }
-
-    /**
-     * @return \MyPortal\HRS_Api\V2\Schema\RequestInfo
-     */
-    public function getRequestInfo()
-    {
-        return $this->requestInfo;
-    }
-
-    /**
-     * @param \MyPortal\HRS_Api\V2\Schema\RequestInfo $requestInfo
-     */
-    public function setRequestInfo($requestInfo)
-    {
-        $this->requestInfo = $requestInfo;
     }
 
     /**

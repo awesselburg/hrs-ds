@@ -1,0 +1,199 @@
+{
+  "accommodations": [
+    {
+      "accommodationId": "6-46171",
+      "bestPrice": 339.0,
+      "bestPriceWithoutPromotion": 339.0,
+      "currency": "EUR",
+      "promotionType": "LAST_MINUTE",
+      "promotionDescription": "Frühbucher",
+      "orderNr": 3,
+      "rooms": [
+        {
+          "roomId": "6-148039",
+          "price": 339.0,
+          "priceWithoutPromotion": 339.0,
+          "reservationType": "STANDARD",
+          "cateringType": "BREAKFAST",
+          "promotionType": "EARLY_BOOKING",
+          "promotionDescription": "Frühbucher",
+          "minPerson" : 2,
+          "maxPerson" : 4,
+          "reservationType": "REJECTABLE_BY_VENDOR"
+        }
+      ]
+    },
+    {
+      "accommodationId": "6-46185",
+      "bestPrice": 445.0,
+      "bestPriceWithoutPromotion": 445.0,
+      "currency": "EUR",
+      "orderNr": 3,
+      "rooms": [
+        {
+          "roomId": "6-148165",
+          "price": 445.0,
+          "priceWithoutPromotion": 445.0,
+          "reservationType": "STANDARD"
+        }
+      ]
+    },
+    {
+      "accommodationId": "6-46395",
+      "bestPrice": 445.0,
+      "bestPriceWithoutPromotion": 445.0,
+      "currency": "EUR",
+      "orderNr": 3,
+      "rooms": [
+        {
+          "roomId": "6-148465",
+          "price": 445.0,
+          "priceWithoutPromotion": 445.0,
+          "reservationType": "STANDARD"
+        }
+      ]
+    },
+    {
+      "accommodationId": "6-45179",
+      "bestPrice": 435.0,
+      "bestPriceWithoutPromotion": 435.0,
+      "currency": "EUR",
+      "orderNr": 3,
+      "rooms": [
+        {
+          "roomId": "6-145626",
+          "price": 435.0,
+          "priceWithoutPromotion": 435.0,
+          "reservationType": "STANDARD"
+        }
+      ]
+    },
+    {
+      "accommodationId": "6-41941",
+      "bestPrice": 412.0,
+      "bestPriceWithoutPromotion": 412.0,
+      "currency": "EUR",
+      "orderNr": 3,
+      "rooms": [
+        {
+          "roomId": "6-137057",
+          "price": 412.0,
+          "priceWithoutPromotion": 412.0,
+          "reservationType": "STANDARD"
+        }
+      ]
+    },
+    {
+      "accommodationId": "6-44218",
+      "bestPrice": 445.0,
+      "bestPriceWithoutPromotion": 445.0,
+      "currency": "EUR",
+      "orderNr": 3,
+      "rooms": [
+        {
+          "roomId": "6-143060",
+          "price": 445.0,
+          "priceWithoutPromotion": 445.0,
+          "reservationType": "STANDARD"
+        }
+      ]
+    },
+    {
+      "accommodationId": "6-44156",
+      "bestPrice": 339.0,
+      "bestPriceWithoutPromotion": 339.0,
+      "currency": "EUR",
+      "orderNr": 3,
+      "rooms": [
+        {
+          "roomId": "6-142913",
+          "price": 339.0,
+          "priceWithoutPromotion": 339.0,
+          "reservationType": "STANDARD"
+        }
+      ]
+    },
+    {
+      "accommodationId": "6-44387",
+      "bestPrice": 435.0,
+      "bestPriceWithoutPromotion": 435.0,
+      "currency": "EUR",
+      "orderNr": 3,
+      "rooms": [
+        {
+          "roomId": "6-143530",
+          "price": 435.0,
+          "priceWithoutPromotion": 435.0,
+          "reservationType": "STANDARD"
+        }
+      ]
+    },
+    {
+      "accommodationId": "6-44376",
+      "bestPrice": 355.0,
+      "bestPriceWithoutPromotion": 355.0,
+      "currency": "EUR",
+      "orderNr": 3,
+      "rooms": [
+        {
+          "roomId": "6-143516",
+          "price": 355.0,
+          "priceWithoutPromotion": 355.0,
+          "reservationType": "STANDARD"
+        }
+      ]
+    },
+    {
+      "accommodationId": "6-44199",
+      "bestPrice": 525.0,
+      "bestPriceWithoutPromotion": 525.0,
+      "currency": "EUR",
+      "orderNr": 3,
+      "rooms": [
+        {
+          "roomId": "6-143051",
+          "price": 525.0,
+          "priceWithoutPromotion": 525.0,
+          "reservationType": "STANDARD"
+        }
+      ]
+    },
+    {
+      "accommodationId": "6-44384",
+      "bestPrice": 327.0,
+      "bestPriceWithoutPromotion": 327.0,
+      "currency": "EUR",
+      "orderNr": 3,
+      "rooms": [
+        {
+          "roomId": "6-143526",
+          "price": 327.0,
+          "priceWithoutPromotion": 327.0,
+          "reservationType": "STANDARD"
+        }
+      ]
+    },
+    {
+      "accommodationId": "6-44282",
+      "bestPrice": 323.0,
+      "bestPriceWithoutPromotion": 323.0,
+      "currency": "EUR",
+      "orderNr": 3,
+      "rooms": [
+        {
+          "roomId": "6-143232",
+          "price": 323.0,
+          "priceWithoutPromotion": 323.0,
+          "reservationType": "STANDARD"
+        }
+      ]
+    }
+  ],
+  "noOfAccommodations": 12,
+  "durationMs": 291,
+  "requestInfo": {
+    "applicationVersion": "1.433",
+    "requestId": "8ce05c24-74c6-42ad-838f-12c992cbdae2",
+    "timestamp": 1579538246156
+  }
+}

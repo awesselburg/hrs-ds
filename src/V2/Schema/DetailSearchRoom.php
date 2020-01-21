@@ -2,15 +2,25 @@
 
 namespace MyPortal\HRS_Api\V2\Schema;
 
-use MyPortal\HRS_Api\Helper\Object;
+use MyPortal\HRS_Api\Helper\Model;
 
 /**
  * Class DetailSearchRoom
  *
  * @package MyPortal\HRS_Api\V2\Schema
  */
-class DetailSearchRoom extends Object
+class DetailSearchRoom extends Model
 {
+    const PROMOTION_TYPE_LAST_MINUTE        = 'LAST_MINUTE';
+    const PROMOTION_TYPE_EARLY_BOOKING      = 'EARLY_BOOKING';
+    const PROMOTION_TYPE_GENERAL            = 'GENERAL';
+    const CATERING_TYPE_NO_BOARD            = 'NO_BOARD';
+    const CATERING_TYPE_BREAKFAST           = 'BREAKFAST';
+    const CATERING_TYPE_HALF_BOARD          = 'HALF_BOARD';
+    const CATERING_TYPE_THREE_QUARTER_BOARD = 'THREE_QUARTER_BOARD';
+    const CATERING_TYPE_FULL_BOARD          = 'FULL_BOARD';
+    const CATERING_TYPE_TALL_INCLUSIVE      = 'ALL_INCLUSIVE';
+
     /**
      * @var string
      */
@@ -49,22 +59,22 @@ class DetailSearchRoom extends Object
     /**
      * @var AdditionalPackage[]
      */
-    public $inclusive;
+    public $inclusive = [];
 
     /**
      * @var AdditionalPackage[]
      */
-    public $exclusive;
+    public $exclusive = [];
 
     /**
      * @var string[]
      */
-    public $cancelConditions;
+    public $cancelConditions = [];
 
     /**
-     * @var ConditionCriteria
+     * @var ConditionCriteria[]
      */
-    public $conditions;
+    public $conditions = [];
 
     /**
      * @var string
@@ -75,6 +85,32 @@ class DetailSearchRoom extends Object
      * @var int
      */
     public $reservationRejectionPeriod;
+
+    /**
+     * @var string
+     */
+    public $rateId;
+
+    /**
+     * @var string[]
+     */
+    public $rateDescription;
+
+    /**
+     * @return string[]
+     */
+    public function getRateDescription()
+    {
+        return $this->rateDescription;
+    }
+
+    /**
+     * @param string[] $rateDescription
+     */
+    public function setRateDescription($rateDescription)
+    {
+        $this->rateDescription = $rateDescription;
+    }
 
     /**
      * @return string
@@ -189,6 +225,22 @@ class DetailSearchRoom extends Object
     }
 
     /**
+     * @return string[]
+     */
+    public function getCancelConditions()
+    {
+        return $this->cancelConditions;
+    }
+
+    /**
+     * @param string[] $cancelConditions
+     */
+    public function setCancelConditions($cancelConditions)
+    {
+        $this->cancelConditions = $cancelConditions;
+    }
+
+    /**
      * @return AdditionalPackage[]
      */
     public function getInclusive()
@@ -221,23 +273,7 @@ class DetailSearchRoom extends Object
     }
 
     /**
-     * @return string[]
-     */
-    public function getCancelConditions()
-    {
-        return $this->cancelConditions;
-    }
-
-    /**
-     * @param string[] $cancelConditions
-     */
-    public function setCancelConditions($cancelConditions)
-    {
-        $this->cancelConditions = $cancelConditions;
-    }
-
-    /**
-     * @return ConditionCriteria
+     * @return ConditionCriteria[]
      */
     public function getConditions()
     {
@@ -245,7 +281,7 @@ class DetailSearchRoom extends Object
     }
 
     /**
-     * @param ConditionCriteria $conditions
+     * @param ConditionCriteria[] $conditions
      */
     public function setConditions($conditions)
     {
@@ -282,5 +318,21 @@ class DetailSearchRoom extends Object
     public function setReservationRejectionPeriod($reservationRejectionPeriod)
     {
         $this->reservationRejectionPeriod = $reservationRejectionPeriod;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRateId()
+    {
+        return $this->rateId;
+    }
+
+    /**
+     * @param string $rateId
+     */
+    public function setRateId($rateId)
+    {
+        $this->rateId = $rateId;
     }
 }

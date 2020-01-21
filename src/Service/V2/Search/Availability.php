@@ -5,11 +5,12 @@ namespace MyPortal\HRS_Api\Service\V2\Search;
 use MyPortal\HRS_Api\V2\Request\AvailabilitySearchRequest;
 use MyPortal\HRS_Api\Service\V2\Service;
 use MyPortal\HRS_Api\V2\Response\AvailabilitySearchResponse;
+use MyPortal\HRS_Api\V2\Schema\ResponseError;
 
 /**
  * Class Availability
  *
- * @package MyPortal\HRS_Api\Service\V2\Search
+ * @package MyPortal\HRS_Api\Service\V2\SearchTest
  */
 class Availability extends Service
 {
@@ -39,18 +40,10 @@ class Availability extends Service
     }
 
     /**
-     * @return AvailabilitySearchResponse
+     * @return AvailabilitySearchResponse | ResponseError
      */
-    public function getAvailabilitySearchResponse()
+    public function getResponse()
     {
         return $this->responseObject;
-    }
-
-    /**
-     * @param AvailabilitySearchResponse $availabilitySearchResponse
-     */
-    public function setAvailabilitySearchResponse($availabilitySearchResponse)
-    {
-        $this->setResponse($availabilitySearchResponse);
     }
 }

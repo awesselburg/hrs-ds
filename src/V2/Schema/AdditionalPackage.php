@@ -2,15 +2,19 @@
 
 namespace MyPortal\HRS_Api\V2\Schema;
 
-use MyPortal\HRS_Api\Helper\Object;
+use MyPortal\HRS_Api\Helper\Model;
 
 /**
  * Class AdditionalPackage
  *
  * @package MyPortal\HRS_Api\V2\Schema
  */
-class AdditionalPackage extends Object
+class AdditionalPackage extends Model
 {
+    const TYPE_FIXED     = 'FIXED';
+    const TYPE_QUANTITY  = 'QUANTITY';
+    const TYPE_INSURANCE = 'INSURANCE';
+
     /**
      * @var string
      */

@@ -2,39 +2,39 @@
 
 namespace MyPortal\HRS_Api\V2\Schema;
 
-use MyPortal\HRS_Api\Helper\Object;
+use MyPortal\HRS_Api\Helper\Model;
 
 /**
  * Class ReservationOfferCriteria
  *
  * @package MyPortal\HRS_Api\V2\Schema
  */
-class ReservationOfferCriteria extends Object
+class ReservationOfferCriteria extends Model
 {
     /**
      * @var TravelCriteria
      */
-    protected $searchCriteria;
+    public $searchCriteria;
 
     /**
      * @var RoomDetailCriteria
      */
-    protected $room;
+    public $room;
 
     /**
      * @var AdditionalPackagesCriteria[]
      */
-    protected $additionalPackages = [];
+    public $additionalPackages = [];
 
     /**
      * @var float
      */
-    protected $totalPriceOriginal;
+    public $totalPriceOriginal;
 
     /**
      * @var float
      */
-    protected $totalPriceModified;
+    public $totalPriceModified;
 
     /**
      * ReservationOfferCriteria constructor.
@@ -43,7 +43,6 @@ class ReservationOfferCriteria extends Object
     {
         $this->searchCriteria     = new TravelCriteria();
         $this->room               = new RoomDetailCriteria();
-        $this->additionalPackages = new AdditionalPackagesCriteria();
     }
 
     /**

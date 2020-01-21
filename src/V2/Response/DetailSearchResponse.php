@@ -7,7 +7,7 @@ namespace MyPortal\HRS_Api\V2\Response;
  *
  * @package MyPortal\HRS_Api\V2\Response
  */
-class DetailSearchResponse
+class DetailSearchResponse extends AbstractResponse
 {
     /**
      * @var \MyPortal\HRS_Api\V2\Schema\TravelCriteria
@@ -48,16 +48,6 @@ class DetailSearchResponse
      * @var bool
      */
     public $guestRemarkSupported;
-
-    /**
-     * @var int
-     */
-    public $durationMs;
-
-    /**
-     * @var \MyPortal\HRS_Api\V2\Schema\RequestInfo
-     */
-    public $requestInfo;
 
     /**
      * @return \MyPortal\HRS_Api\V2\Schema\TravelCriteria
@@ -185,37 +175,5 @@ class DetailSearchResponse
     public function setGuestRemarkSupported($guestRemarkSupported)
     {
         $this->guestRemarkSupported = $guestRemarkSupported;
-    }
-
-    /**
-     * @return int
-     */
-    public function getDurationMs()
-    {
-        return $this->durationMs;
-    }
-
-    /**
-     * @param int $durationMs
-     */
-    public function setDurationMs($durationMs)
-    {
-        $this->durationMs = $durationMs;
-    }
-
-    /**
-     * @return \MyPortal\HRS_Api\V2\Schema\RequestInfo
-     */
-    public function getRequestInfo()
-    {
-        return $this->requestInfo;
-    }
-
-    /**
-     * @param \MyPortal\HRS_Api\V2\Schema\RequestInfo $requestInfo
-     */
-    public function setRequestInfo($requestInfo)
-    {
-        $this->requestInfo = $requestInfo;
     }
 }

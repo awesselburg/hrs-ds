@@ -3,7 +3,7 @@
 namespace MyPortal\HRS_Api\Service;
 
 use MyPortal\HRS_Api\Client;
-use MyPortal\HRS_Api\Helper\Object;
+use MyPortal\HRS_Api\Helper\Model;
 
 class Service
 {
@@ -16,12 +16,12 @@ class Service
     protected $client;
 
     /**
-     * @var Object
+     * @var Model
      */
     protected $requestObject;
 
     /**
-     * @var Object
+     * @var Model
      */
     protected $responseObject;
 
@@ -33,11 +33,11 @@ class Service
     public function __construct($client)
     {
         $this->client        = $client;
-        $this->requestObject = new Object();
+        $this->requestObject = new Model();
     }
 
     /**
-     * @return Object
+     * @return Model
      */
     public function getRequestObject()
     {
@@ -45,7 +45,7 @@ class Service
     }
 
     /**
-     * @param Object $requestObject
+     * @param Model $requestObject
      */
     public function setRequestObject($requestObject)
     {
@@ -53,7 +53,7 @@ class Service
     }
     
     /**
-     * @return Object
+     * @return Model
      */
     public function getResponseObject()
     {
@@ -61,7 +61,7 @@ class Service
     }
 
     /**
-     * @param Object $responseObject
+     * @param Model $responseObject
      */
     public function setResponseObject($responseObject)
     {

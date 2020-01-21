@@ -2,14 +2,14 @@
 
 namespace MyPortal\HRS_Api\V2\Schema;
 
-use MyPortal\HRS_Api\Helper\Object;
+use MyPortal\HRS_Api\Helper\Model;
 
 /**
  * Class Document
  *
  * @package MyPortal\HRS_Api\V2\Schema
  */
-class Document extends Object
+class Document extends Model
 {
     /**
      * @var string

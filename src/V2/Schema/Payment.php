@@ -2,14 +2,14 @@
 
 namespace MyPortal\HRS_Api\V2\Schema;
 
-use MyPortal\HRS_Api\Helper\Object;
+use MyPortal\HRS_Api\Helper\Model;
 
 /**
  * Class Payment
  *
  * @package MyPortal\HRS_Api\V2\Schema
  */
-class Payment extends Object
+class Payment extends Model
 {
     /**
      * @var CreditCardPayment

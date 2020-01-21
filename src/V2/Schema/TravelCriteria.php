@@ -2,29 +2,37 @@
 
 namespace MyPortal\HRS_Api\V2\Schema;
 
-use MyPortal\HRS_Api\Helper\Object;
+use MyPortal\HRS_Api\Helper\Model;
 
 /**
  * Class TravelCriteria
  *
  * @package MyPortal\HRS_Api\V2\Schema
  */
-class TravelCriteria extends Object
+class TravelCriteria extends Model
 {
     /**
      * @var int
      */
-    protected $adults = 1;
+    public $adults = 1;
 
     /**
      * @var array
      */
-    protected $childrenAges = [];
+    public $childrenAges = [];
 
     /**
      * @var TimeSpan
      */
-    protected $date;
+    public $date;
+
+    /**
+     * TravelCriteria constructor.
+     */
+    public function __construct()
+    {
+        $this->date = new TimeSpan();
+    }
 
     /**
      * @return int

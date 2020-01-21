@@ -2,14 +2,14 @@
 
 namespace MyPortal\HRS_Api\V2\Schema;
 
-use MyPortal\HRS_Api\Helper\Object;
+use MyPortal\HRS_Api\Helper\Model;
 
 /**
  * Class CreditCardPayment
  *
  * @package MyPortal\HRS_Api\V2\Schema
  */
-class CreditCardPayment extends Object
+class CreditCardPayment extends Model
 {
     /**
      * @var bool
@@ -21,7 +21,10 @@ class CreditCardPayment extends Object
      */
     public $needCvc;
 
-    public $supportedCreditCardTypes;
+    /**
+     * @var CreditCardType[]
+     */
+    public $supportedCreditCardTypes = [];
 
     /**
      * @var string
@@ -66,7 +69,7 @@ class CreditCardPayment extends Object
     }
 
     /**
-     * @return mixed
+     * @return CreditCardType[]
      */
     public function getSupportedCreditCardTypes()
     {
@@ -74,7 +77,7 @@ class CreditCardPayment extends Object
     }
 
     /**
-     * @param mixed $supportedCreditCardTypes
+     * @param CreditCardType[] $supportedCreditCardTypes
      */
     public function setSupportedCreditCardTypes($supportedCreditCardTypes)
     {

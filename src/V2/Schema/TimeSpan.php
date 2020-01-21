@@ -2,24 +2,24 @@
 
 namespace MyPortal\HRS_Api\V2\Schema;
 
-use MyPortal\HRS_Api\Helper\Object;
+use MyPortal\HRS_Api\Helper\Model;
 
 /**
  * Class TimeSpan
  *
  * @package MyPortal\HRS_Api\V2\Schema
  */
-class TimeSpan extends Object
+class TimeSpan extends Model
 {
     /**
      * @var string
      */
-    protected $from;
+    public $from;
 
     /**
      * @var string
      */
-    protected $to;
+    public $to;
 
     /**
      * @return string

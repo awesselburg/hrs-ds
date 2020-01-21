@@ -2,14 +2,14 @@
 
 namespace MyPortal\HRS_Api\V2\Schema;
 
-use MyPortal\HRS_Api\Helper\Object;
+use MyPortal\HRS_Api\Helper\Model;
 
 /**
  * Class TimeSpan
  *
  * @package MyPortal\HRS_Api\V2\Schema
  */
-class RequestInfo extends Object
+class RequestInfo extends Model
 {
     /**
      * @var string

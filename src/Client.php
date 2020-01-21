@@ -3,7 +3,8 @@
 namespace MyPortal\HRS_Api;
 
 use \GuzzleHttp\Client as GuzzleClient;
-use mysql_xdevapi\Exception;
+use \Exception;
+use MyPortal\HRS_Api\Exception\InvalidConfigException;
 
 /**
  * Class Client
@@ -16,20 +17,16 @@ class Client extends GuzzleClient
     const SERVICE_TEST_URL = 'https://testapi.hrs-ds.com';
 
     /**
-     * @var null|string
-     */
-    protected $interfaceId;
-
-    /**
      * Client constructor.
      *
      * @param array $config
-     * @param bool  $isTest
+     *
+     * @throws Exception
      */
     public function __construct(array $config = [])
     {
         if (!isset($config['X-INTERFACEID'])) {
-            throw new Exception('Invalid config: no X-INTERFACEID given');
+            throw new InvalidConfigException('Invalid config: no X-INTERFACEID given');
         }
 
         parent::__construct(array_merge($config, [
@@ -46,7 +43,7 @@ class Client extends GuzzleClient
      *
      * @return string
      */
-    protected function getBaseUrl($config)
+    public function getBaseUrl($config)
     {
         return (isset($config['useSandbox']) && $config['useSandbox'] === true)
             ? self::SERVICE_TEST_URL

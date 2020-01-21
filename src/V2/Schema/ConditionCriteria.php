@@ -2,14 +2,14 @@
 
 namespace MyPortal\HRS_Api\V2\Schema;
 
-use MyPortal\HRS_Api\Helper\Object;
+use MyPortal\HRS_Api\Helper\Model;
 
 /**
  * Class ConditionCriteria
  *
  * @package MyPortal\HRS_Api\V2\Schema
  */
-class ConditionCriteria extends Object
+class ConditionCriteria extends Model
 {
     /**
      * @var string

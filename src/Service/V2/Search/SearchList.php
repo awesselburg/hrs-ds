@@ -5,11 +5,12 @@ namespace MyPortal\HRS_Api\Service\V2\Search;
 use MyPortal\HRS_Api\V2\Request\ListSearchRequest;
 use MyPortal\HRS_Api\Service\V2\Service;
 use MyPortal\HRS_Api\V2\Response\ListSearchResponse;
+use MyPortal\HRS_Api\V2\Schema\ResponseError;
 
 /**
  * Class SearchList
  *
- * @package MyPortal\HRS_Api\Service\V2\Search
+ * @package MyPortal\HRS_Api\Service\V2\SearchTest
  */
 class SearchList extends Service
 {
@@ -39,20 +40,10 @@ class SearchList extends Service
     }
 
     /**
-     * @return ListSearchResponse
+     * @return ListSearchResponse | ResponseError
      */
-    public function getListSearchResponse()
+    public function getResponse()
     {
         return $this->responseObject;
-    }
-
-    /**
-     * @param ListSearchResponse $detailSearchResponse
-     *
-     * @throws \JsonMapper_Exception
-     */
-    public function setListSearchResponse($listSearchResponse)
-    {
-        $this->setResponse($listSearchResponse);
     }
 }
