@@ -1,30 +1,30 @@
 <?php
 
-namespace MyPortal\HRS_Api\V2\Request\Schema;
+namespace MyPortal\HRS_Api\V2\Schema;
 
-use MyPortal\HRS_Api\Helper\Object;
+use MyPortal\HRS_Api\Helper\Model;
 
 /**
  * Class SellingInfo
  *
- * @package MyPortal\HRS_Api\V2\Request\Schema
+ * @package MyPortal\HRS_Api\V2\Schema
  */
-class SellingInfo extends Object
+class SellingInfo extends Model
 {
     /**
      * @var string
      */
-    protected $campaignId;
+    public $campaignId;
 
     /**
      * @var string
      */
-    protected $partnerId;
+    public $partnerId;
 
     /**
      * @var string
      */
-    protected $userId;
+    public $userId;
 
     /**
      * @return string

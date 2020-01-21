@@ -1,15 +1,15 @@
 <?php
 
-namespace MyPortal\HRS_Api\V2\Request\Schema;
+namespace MyPortal\HRS_Api\V2\Schema;
 
-use MyPortal\HRS_Api\Helper\Object;
+use MyPortal\HRS_Api\Helper\Model;
 
 /**
  * Class PersonCriteria
  *
- * @package MyPortal\HRS_Api\V2\Request\Schema
+ * @package MyPortal\HRS_Api\V2\Schema
  */
-class PersonCriteria extends Object
+class PersonCriteria extends Model
 {
     const SALUTATION_CODE_MR  = 'MR';
     const SALUTATION_CODE_MRS = 'MRS';
@@ -17,62 +17,62 @@ class PersonCriteria extends Object
     /**
      * @var string
      */
-    protected $firstName;
+    public $firstName;
 
     /**
      * @var string
      */
-    protected $lastName;
+    public $lastName;
 
     /**
      * @var string
      */
-    protected $salutationCode;
+    public $salutationCode;
 
     /**
      * @var string
      */
-    protected $company;
+    public $company;
 
     /**
      * @var string
      */
-    protected $email;
+    public $email;
 
     /**
      * @var string
      */
-    protected $street;
+    public $street;
 
     /**
      * @var string
      */
-    protected $zip;
+    public $zip;
 
     /**
      * @var string
      */
-    protected $city;
+    public $city;
 
     /**
      * @var string
      */
-    protected $phone;
+    public $phone;
 
     /**
      * @var string
      */
-    protected $countryCode;
+    public $countryCode;
 
     /**
      * @var string
      */
-    protected $remark;
+    public $remark;
 
     /**
      * @var GuestName[]
      */
-    protected $additionalGuestNames;
+    public $additionalGuestNames = [];
 
     /**
      * @return string

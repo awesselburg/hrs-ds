@@ -2,18 +2,18 @@
 
 namespace MyPortal\HRS_Api\V2\Request;
 
-use MyPortal\HRS_Api\Helper\Object;
-use MyPortal\HRS_Api\V2\Request\Schema\CreditCardCriteria;
-use MyPortal\HRS_Api\V2\Request\Schema\PersonCriteria;
-use MyPortal\HRS_Api\V2\Request\Schema\ReservationOfferCriteria;
-use MyPortal\HRS_Api\V2\Request\Schema\SellingInfo;
+use MyPortal\HRS_Api\Helper\Model;
+use MyPortal\HRS_Api\V2\Schema\CreditCardCriteria;
+use MyPortal\HRS_Api\V2\Schema\PersonCriteria;
+use MyPortal\HRS_Api\V2\Schema\ReservationOfferCriteria;
+use MyPortal\HRS_Api\V2\Schema\SellingInfo;
 
 /**
  * Class ReservationRequest
  *
  * @package MyPortal\HRS_Api\V2\Request
  */
-class ReservationRequest extends Object
+class ReservationRequest extends Model
 {
     const PAYMENT_METHOD_SELECTED_NONE       = 'NONE';
     const PAYMENT_METHOD_SELECTED_TRANSFER   = 'TRANSFER';
@@ -22,27 +22,32 @@ class ReservationRequest extends Object
     /**
      * @var ReservationOfferCriteria
      */
-    protected $offer;
+    public $offer;
 
     /**
      * @var PersonCriteria
      */
-    protected $personInfo;
+    public $personInfo;
 
     /**
      * @var string
      */
-    protected $paymentMethodSelected;
+    public $paymentMethodSelected;
 
     /**
      * @var CreditCardCriteria
      */
-    protected $creditCard;
+    public $creditCard;
 
     /**
      * @var SellingInfo
      */
-    protected $sellingInfo;
+    public $sellingInfo;
+
+    /**
+     * @var string
+     */
+    public $customerIp;
 
     /**
      * ReservationRequest constructor.
@@ -133,5 +138,21 @@ class ReservationRequest extends Object
     public function setSellingInfo(SellingInfo $sellingInfo)
     {
         $this->sellingInfo = $sellingInfo;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCustomerIp()
+    {
+        return $this->customerIp;
+    }
+
+    /**
+     * @param string $customerIp
+     */
+    public function setCustomerIp($customerIp)
+    {
+        $this->customerIp = $customerIp;
     }
 }

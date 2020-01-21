@@ -1,0 +1,32 @@
+{
+  "searchCriteria": {
+    "date": {
+      "from": "2020-02-16",
+      "to": "2020-02-22"
+    },
+    "adults": 2,
+    "childrenAges": [
+      2,
+      4
+    ]
+  },
+  "accommodationId": "6-44218",
+  "idsOfVacantRooms": [
+    "6-143060"
+  ],
+  "notBookableRooms": [
+    {
+      "roomId": "1234",
+      "notBookableReasonIds": [
+        "22",
+        "44"
+      ]
+    }
+  ],
+  "durationMs": 455,
+  "requestInfo": {
+    "applicationVersion": "1.433",
+    "requestId": "d8b4a735-7daa-43ab-a0b0-fba4fa72aab9",
+    "timestamp": 1579510015147
+  }
+}

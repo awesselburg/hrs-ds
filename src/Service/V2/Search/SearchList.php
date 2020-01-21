@@ -4,11 +4,13 @@ namespace MyPortal\HRS_Api\Service\V2\Search;
 
 use MyPortal\HRS_Api\V2\Request\ListSearchRequest;
 use MyPortal\HRS_Api\Service\V2\Service;
+use MyPortal\HRS_Api\V2\Response\ListSearchResponse;
+use MyPortal\HRS_Api\V2\Schema\ResponseError;
 
 /**
  * Class SearchList
  *
- * @package MyPortal\HRS_Api\Service\V2\Search
+ * @package MyPortal\HRS_Api\Service\V2\SearchTest
  */
 class SearchList extends Service
 {
@@ -17,7 +19,8 @@ class SearchList extends Service
     public function __construct($client)
     {
         parent::__construct($client);
-        $this->requestObject = new ListSearchRequest();
+        $this->requestObject  = new ListSearchRequest();
+        $this->responseObject = new ListSearchResponse();
     }
 
     /**
@@ -34,5 +37,13 @@ class SearchList extends Service
     public function setListSearchRequest($listSearchRequest)
     {
         $this->requestObject = $listSearchRequest;
+    }
+
+    /**
+     * @return ListSearchResponse | ResponseError
+     */
+    public function getResponse()
+    {
+        return $this->responseObject;
     }
 }

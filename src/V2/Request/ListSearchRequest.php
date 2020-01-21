@@ -2,31 +2,46 @@
 
 namespace MyPortal\HRS_Api\v2\Request;
 
-use MyPortal\HRS_Api\Helper\Object;
-use MyPortal\HRS_Api\V2\Request\Schema\RoomListCriteria;
-use MyPortal\HRS_Api\V2\Request\Schema\TravelCriteria;
+use MyPortal\HRS_Api\Helper\Model;
+use MyPortal\HRS_Api\V2\Schema\RoomListCriteria;
+use MyPortal\HRS_Api\V2\Schema\TravelCriteria;
 
 /**
  * Class ListSearchRequest
  *
  * @package MyPortal\HRS_Api\v2\Request
  */
-class ListSearchRequest extends Object
+class ListSearchRequest extends Model
 {
     /**
      * @var RoomListCriteria
      */
-    protected $accommodations;
+    public $accommodations;
 
     /**
      * @var TravelCriteria
      */
-    protected $searchCriteria;
+    public $searchCriteria;
 
     /**
      * @var int
      */
-    protected $timeoutMs;
+    public $timeoutMs;
+
+    /**
+     * @var string
+     */
+    public $customerIp;
+
+    /**
+     * @var bool
+     */
+    public $fromCacheOnly;
+
+    /**
+     * @var bool
+     */
+    public $async;
 
     /**
      * ListSearchRequest constructor.
@@ -83,5 +98,53 @@ class ListSearchRequest extends Object
     public function setTimeoutMs($timeoutMs)
     {
         $this->timeoutMs = $timeoutMs;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCustomerIp()
+    {
+        return $this->customerIp;
+    }
+
+    /**
+     * @param string $customerIp
+     */
+    public function setCustomerIp($customerIp)
+    {
+        $this->customerIp = $customerIp;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isFromCacheOnly()
+    {
+        return $this->fromCacheOnly;
+    }
+
+    /**
+     * @param bool $fromCacheOnly
+     */
+    public function setFromCacheOnly($fromCacheOnly)
+    {
+        $this->fromCacheOnly = $fromCacheOnly;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isAsync()
+    {
+        return $this->async;
+    }
+
+    /**
+     * @param bool $async
+     */
+    public function setAsync($async)
+    {
+        $this->async = $async;
     }
 }

@@ -3,12 +3,14 @@
 ### Availability
 
 ```php
+<?php
+
 use MyPortal\HRS_Api;
 
 require_once './vendor/autoload.php';
 
 $config = [
-    'useSandbox' => true,
+    'useSandbox'    => true,
     'X-INTERFACEID' => 'YOUR_INTERFACE_ID',
 ];
 
@@ -19,7 +21,7 @@ $availability = new HRS_Api\Service\V2\Search\Availability($client);
 $availabilitySearchRequest = $availability->getAvailabilitySearchRequest();
 
 $accommodation = $availabilitySearchRequest->getAccommodation();
-$accommodation->setAccommodationId('6-46161');
+$accommodation->setAccommodationId('6-44218');
 
 /**
  * $accommodation->setRoomIds(['6-148014']);
@@ -27,9 +29,9 @@ $accommodation->setAccommodationId('6-46161');
  * $accommodation->addRoomId('6-148014');
  */
 
-$date = new HRS_Api\V2\Request\Schema\TimeSpan();
-$date->setFrom('2020-16-02');
-$date->setTo('2020-16-22');
+$date = new HRS_Api\V2\Schema\TimeSpan();
+$date->setFrom('2020-02-16');
+$date->setTo('2020-02-22');
 
 $searchCriteria = $availabilitySearchRequest->getSearchCriteria();
 
@@ -49,10 +51,14 @@ $searchCriteria->setAdults(1);
 /**
  * print_r($availability->getPayload());
  */
-
 $result = $availability->call();
+$response = $availability->getResponse();
 
-echo $result->getBody()->getContents();
+if ($response instanceof HRS_Api\V2\Response\AvailabilitySearchResponse) {
+    print_r($response->getIdsOfVacantRooms());
+} else {
+    echo($response->getErrorDescription());
+}
 ```
 
 ### Search list
@@ -64,7 +70,7 @@ use MyPortal\HRS_Api;
 require_once './vendor/autoload.php';
 
 $config = [
-    'useSandbox' => false,
+    'useSandbox' => true,
     'X-INTERFACEID' => 'YOUR_INTERFACE_ID'
 ];
 
@@ -73,17 +79,17 @@ $client = new HRS_Api\Client($config);
 $list              = new HRS_Api\Service\V2\Search\SearchList($client);
 $listSearchRequest = $list->getListSearchRequest();
 
-$travelCriteria = new HRS_Api\V2\Request\Schema\TravelCriteria();
+$travelCriteria = new HRS_Api\V2\Schema\TravelCriteria();
 
-$date = new HRS_Api\V2\Request\Schema\TimeSpan();
-$date->setFrom('2020-16-02');
-$date->setTo('2020-16-22');
+$date = new HRS_Api\V2\Schema\TimeSpan();
+$date->setFrom('2020-02-16');
+$date->setTo('2020-02-22');
 
 $travelCriteria->setDate($date);
 
 $listSearchRequest->setSearchCriteria($travelCriteria);
 
-$roomListCriteria = new HRS_Api\V2\Request\Schema\RoomListCriteria();
+$roomListCriteria = new HRS_Api\V2\Schema\RoomListCriteria();
 
 /**
  * $roomListCriteria->setAccommodationIds(['6-46161']);
@@ -104,11 +110,18 @@ $roomListCriteria->addRegionName('Deutschland');
  */
 
 $listSearchRequest->setAccommodations($roomListCriteria);
-$listSearchRequest->setTimeoutMs(100);
 
-$result = $list->call();
+$list->call();
 
-echo $result->getBody()->getContents();
+$response = $list->getResponse();
+
+if ($response instanceof MyPortal\HRS_Api\V2\Response\ListSearchResponse) {
+    foreach ($response->getAccommodations() as $accommodation) {
+        echo sprintf('%s %s - ', $accommodation->getBestPriceWithoutPromotion(), $accommodation->getCurrency());
+    }
+} else {
+    echo($response->getErrorDescription());
+}
 ```
 
 ### Search detail
@@ -121,8 +134,8 @@ use MyPortal\HRS_Api;
 require_once './vendor/autoload.php';
 
 $config = [
-    'useSandbox' => true,
-    'X-INTERFACEID' => 'YOUR_INTERFACE_ID'
+    'useSandbox'    => true,
+    'X-INTERFACEID' => 'YOUR_INTERFACE_ID',
 ];
 
 $client = new HRS_Api\Client($config);
@@ -132,12 +145,12 @@ $detailSearchRequest = $detail->getDetailSearchRequest();
 
 $searchCriteria = $detailSearchRequest->getSearchCriteria();
 
-$date = new HRS_Api\V2\Request\Schema\TimeSpan();
+$date = new HRS_Api\V2\Schema\TimeSpan();
 $date->setFrom('2020-02-16');
 $date->setTo('2020-02-22');
 $searchCriteria->setDate($date);
 
-$searchCriteria->setAdults(1);
+$searchCriteria->setAdults(2);
 
 /**
  * $searchCriteria->setChildrenAges([3, 6]);
@@ -146,14 +159,22 @@ $searchCriteria->setAdults(1);
  */
 
 $accommodation = $detailSearchRequest->getAccommodation();
-$accommodation->setAccommodationId('6-46161');
-$accommodation->setRoomId('6-148014');
+$accommodation->setAccommodationId('6-44218');
+$accommodation->setRoomId('6-143060');
 
 $detailSearchRequest->setAddNotBookableReasons(true);
 
-$result = $detail->call();
+$detail->call();
 
-echo $result->getBody()->getContents();
+$response = $detail->getResponse();
+
+if ($response instanceof MyPortal\HRS_Api\V2\Response\DetailSearchResponse) {
+    foreach ($response->getRooms() as $room) {
+        echo sprintf('%s %s - ', $room->getTotalPrice(), $response->getCurrency());
+    }
+} else {
+    echo($response->getErrorDescription());
+}
 ```
 
 ### Reservation
@@ -167,7 +188,7 @@ require_once './vendor/autoload.php';
 
 $config = [
     'useSandbox'    => true,
-    'X-INTERFACEID' => 'uTqMP3eZdYVIyKLCAkdRF5EsUUPFNoRfBC99wVjLmfK1vpO1jov6i8HbWoo9qTaU',
+    'X-INTERFACEID' => 'YOUR_INTERFACE_ID',
 ];
 
 $client = new HRS_Api\Client($config);
@@ -199,8 +220,8 @@ $reservationRequest = $reservation->getReservationRequest();
 
 $offer = $reservationRequest->getOffer();
 
-$offer->getRoom()->setRoomId('99-6-148014');
-$offer->getRoom()->setAccommodationId('99-6-46161');
+$offer->getRoom()->setRoomId('6-143060');
+$offer->getRoom()->setAccommodationId('6-44218');
 
 $personInfo = $reservationRequest->getPersonInfo();
 $personInfo->setFirstName('Alex');
@@ -233,7 +254,7 @@ $reservationRequest->setPaymentMethodSelected('NONE');
  */
 
 $searchCriteria = $offer->getSearchCriteria();
-$date           = new HRS_Api\V2\Request\Schema\TimeSpan();
+$date           = new HRS_Api\V2\Schema\TimeSpan();
 $date->setFrom('2020-02-16');
 $date->setTo('2020-02-22');
 $searchCriteria->setDate($date);
@@ -245,7 +266,13 @@ $searchCriteria->setAdults(2);
  * $searchCriteria->addChildrenAge(6);
  */
 
-$result = $reservation->call();
+$reservation->call();
 
-echo $result->getBody()->getContents();
+$response = $reservation->getReservationResponse();
+
+if ($response instanceof MyPortal\HRS_Api\V2\Response\ReservationResponse) {
+    echo $response->getReservationId();
+} else {
+    echo($response->getErrorDescription());
+}
 ```

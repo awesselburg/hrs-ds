@@ -1,50 +1,56 @@
 <?php
 
-namespace MyPortal\HRS_Api\V2\Request\Schema;
+namespace MyPortal\HRS_Api\V2\Schema;
 
-use MyPortal\HRS_Api\Helper\Object;
+use MyPortal\HRS_Api\Helper\Model;
 
 /**
  * Class CreditCardCriteria
  *
- * @package MyPortal\HRS_Api\V2\Request\Schema
+ * @package MyPortal\HRS_Api\V2\Schema
  */
-class CreditCardCriteria extends Object
+class CreditCardCriteria extends Model
 {
-    /**
-     * @var string
-     */
-    protected $validThroughDateString;
+    const TYPE_VISA       = 'VISA';
+    const TYPE_MASTERCARD = 'MASTERCARD';
+    const TYPE_AMEX       = 'AMEX';
+    const TYPE_DINERS     = 'DINERS';
+    const TYPE_JCB        = 'JCB';
 
     /**
      * @var string
      */
-    protected $holder;
+    public $validThroughDateString;
 
     /**
      * @var string
      */
-    protected $number;
+    public $holder;
 
     /**
      * @var string
      */
-    protected $type;
+    public $number;
+
+    /**
+     * @var string
+     */
+    public $type;
 
     /**
      * @var int
      */
-    protected $validThroughDateMonth;
+    public $validThroughDateMonth;
 
     /**
      * @var int
      */
-    protected $validThroughDateYear;
+    public $validThroughDateYear;
 
     /**
      * @var string
      */
-    protected $cvc;
+    public $cvc;
 
     /**
      * @return string

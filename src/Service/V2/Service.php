@@ -3,6 +3,9 @@
 namespace MyPortal\HRS_Api\Service\V2;
 
 use MyPortal\HRS_Api\Client;
+use MyPortal\HRS_Api\V2\Response\AvailabilitySearchResponse;
+use MyPortal\HRS_Api\V2\Schema\ResponseError;
+use MyPortal\HRS_Api\V2\Schema\TravelCriteria;
 
 /**
  * Class Service
@@ -12,16 +15,35 @@ use MyPortal\HRS_Api\Client;
 class Service extends \MyPortal\HRS_Api\Service\Service
 {
     /**
-     * @return \Psr\Http\Message\ResponseInterface
+     * @throws \JsonMapper_Exception
      */
     public function call()
     {
         try {
-            return $this->getClient()->request(self::METHOD, static::URI, [
-                'body' => \GuzzleHttp\json_encode($this->getRequestObject()->createJsonPayload()),
+            $response = $this->getClient()->request(self::METHOD, static::URI, [
+                'body' => \GuzzleHttp\json_encode($this->getRequestObject()->createPayload()),
             ]);
+            $this->setJsonResponse($response->getBody()->getContents());
         } catch (\Exception $e) {
-            die ($e->getMessage());
+            $this->setJsonResponse($e->getResponse()->getBody(true)->getContents(), true);
         }
+    }
+
+    /**
+     * @param      $response
+     * @param bool $isError
+     *
+     * @throws \JsonMapper_Exception
+     */
+    public function setJsonResponse($response, $isError = false)
+    {
+        $mapper        = new \JsonMapper();
+        $responseClass = $isError
+            ? 'MyPortal\HRS_Api\V2\Schema\ResponseError'
+            : get_class($this->responseObject);
+
+        $this->setResponseObject(
+            $mapper->map(json_decode($response, false), new $responseClass)
+        );
     }
 }

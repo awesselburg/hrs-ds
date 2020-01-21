@@ -1,20 +1,30 @@
 <?php
 
-namespace MyPortal\HRS_Api\V2\Request\Schema;
+namespace MyPortal\HRS_Api\V2\Schema;
 
-use MyPortal\HRS_Api\Helper\Object;
+use MyPortal\HRS_Api\Helper\Model;
 
-class RoomDetailCriteria extends Object
+/**
+ * Class RoomDetailCriteria
+ *
+ * @package MyPortal\HRS_Api\V2\Schema
+ */
+class RoomDetailCriteria extends Model
 {
     /**
      * @var string
      */
-    protected $accommodationId;
+    public $accommodationId;
 
     /**
      * @var string
      */
-    protected $roomId;
+    public $roomId;
+
+    /**
+     * @var string
+     */
+    public $rateId;
 
     /**
      * @return string
@@ -38,6 +48,22 @@ class RoomDetailCriteria extends Object
     public function getRoomId()
     {
         return $this->roomId;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRateId()
+    {
+        return $this->rateId;
+    }
+
+    /**
+     * @param string $rateId
+     */
+    public function setRateId($rateId)
+    {
+        $this->rateId = $rateId;
     }
 
     /**

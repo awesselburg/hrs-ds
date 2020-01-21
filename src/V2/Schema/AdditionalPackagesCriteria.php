@@ -1,25 +1,25 @@
 <?php
 
-namespace MyPortal\HRS_Api\V2\Request\Schema;
+namespace MyPortal\HRS_Api\V2\Schema;
 
-use MyPortal\HRS_Api\Helper\Object;
+use MyPortal\HRS_Api\Helper\Model;
 
 /**
  * Class AdditionalPackagesCriteria
  *
- * @package MyPortal\HRS_Api\V2\Request\Schema
+ * @package MyPortal\HRS_Api\V2\Schema
  */
-class AdditionalPackagesCriteria extends Object
+class AdditionalPackagesCriteria extends Model
 {
     /**
      * @var string;
      */
-    protected $id;
+    public $id;
 
     /**
      * @var string
      */
-    protected $amount;
+    public $amount;
 
     /**
      * @return string

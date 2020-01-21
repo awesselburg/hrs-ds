@@ -1,0 +1,157 @@
+{
+  "searchCriteria": {
+    "date": {
+      "from": "2020-02-16",
+      "to": "2020-02-22"
+    },
+    "adults": 2,
+    "childrenAges": [
+      2,
+      4
+    ]
+  },
+  "accommodationId": "6-44218",
+  "rooms": [
+    {
+      "roomId": "6-143060",
+      "totalPrice": 415.0,
+      "discount": 18.0,
+      "promotionType": "EARLY_BOOKING",
+      "promotionDescription": "Frühbucher",
+      "cateringType": "BREAKFAST",
+      "payment": {
+        "paymentOptionTransfer": {
+          "type": "TRANSFER"
+        },
+        "paymentOptionCreditCard": {
+          "guarantee": true,
+          "needCvc": true,
+          "supportedCreditCardTypes": [
+            {
+              "type": "AMEX"
+            }
+          ],
+          "type": "AMEX",
+          "externalPayment": false
+        },
+        "depositPayments": [
+          {
+            "date": "2020-01-22",
+            "price": 41.5,
+            "description": "22.01.2020, Anzahlung: 41,50 EUR per Überweisung",
+            "onsite": false
+          }
+        ],
+        "finalPayment": {
+          "date": "2020-02-02",
+          "price": 373.5,
+          "description": "02.02.2020, Restzahlung: 373,50 EUR per Überweisung",
+          "onsite": false
+        },
+        "extraPaymentInfoText": "Die Bankdaten werden Ihnen anschließend in der Buchungsbestätigung übermittelt."
+      },
+      "inclusive": [
+        {
+          "name": "Buchungsgebühr",
+          "price": 15.0,
+          "type": "INSURANCE",
+          "maxQuantity": 2,
+          "description": "Example"
+        },
+        {
+          "name": "Endreinigung",
+          "price": 70.0
+        }
+      ],
+      "exclusive": [
+        {
+          "id": "3682588",
+          "name": "Parkplatz",
+          "price": 0.0,
+          "type": "FIXED"
+        },
+        {
+          "id": "insurance2storno",
+          "name": "Reiseschutz der ERGO Reiseversicherung AG",
+          "price": 17.0,
+          "type": "INSURANCE",
+          "description": "Unverbindliches Angebot zur Storno-Versicherung\nNach Abschluss der Buchung bekommen Sie Ihr persönliches und unverbindliches Angebot der ERGO Reiseversicherung via E-Mail zugesandt. Der Versicherungsschutz wird erst mit Überweisung der Versicherungsprämie wirksam. Bei Nichtbezahlung kommt kein Vertrag zwischen Ihnen und der ERGO Reiseversicherung zustande.<br><br>Hier finden Sie zu Ihrer Kenntnis die vollständigen <a href=\"https://www.buchen.travel/shared/erv/Versicherungsbedingungen-ERGO-Reiseversicherung.pdf\" target =\"_blank\">Versicherungsbedingungen</a> der ERGO Reiseversicherung sowie das <a href=\"https://www.buchen.travel/shared/erv/IPID_Storno-und-StornoPlus-Versicherung-ERGO.pdf\" target =\"_blank\">Produktinformationsblatt (IPID)</a>."
+        },
+        {
+          "id": "insurance2stornoplus",
+          "name": "Reiseschutz der ERGO Reiseversicherung AG",
+          "price": 26.0,
+          "type": "INSURANCE",
+          "description": "Unverbindliches Angebot zur StornoPlus-Versicherung\nNach Abschluss der Buchung bekommen Sie Ihr persönliches und unverbindliches Angebot der ERGO Reiseversicherung via E-Mail zugesandt. Der Versicherungsschutz wird erst mit Überweisung der Versicherungsprämie wirksam. Bei Nichtbezahlung kommt kein Vertrag zwischen Ihnen und der ERGO Reiseversicherung zustande.<br><br>Hier finden Sie zu Ihrer Kenntnis die vollständigen <a href=\"https://www.buchen.travel/shared/erv/Versicherungsbedingungen-ERGO-Reiseversicherung.pdf\" target =\"_blank\">Versicherungsbedingungen</a> der ERGO Reiseversicherung sowie das <a href=\"https://www.buchen.travel/shared/erv/IPID_Storno-und-StornoPlus-Versicherung-ERGO.pdf\" target =\"_blank\">Produktinformationsblatt (IPID)</a>.\n<script type=\"text/javascript\" src=\"https://www.buchen.travel/shared/js-scripts/ervtt.js\"></script>\n<link href=\"https://www.buchen.travel/shared/ervtt.css\" rel=\"stylesheet\" type=\"text/css\">\n<a title=\"Leistungsvergleich\" href=\"javascript:popupWindow('400','700','100','100','https://www.buchen.travel/shared/erv/Reiseschutz-Angebot-Vergleich-ERGO.pdf','yes','faq')\" class=\"erv_tt\">Leistungsvergleich</a>"
+        },
+        {
+          "id": "25349020",
+          "name": "Kurtaxe Erwachsene",
+          "price": 6.0,
+          "type": "QUANTITY",
+          "maxQuantity": 10
+        },
+        {
+          "id": "25349021",
+          "name": "Kurtaxe ermäßigt, Kinder 6- 18 Jahre, Schwerbehinderte",
+          "price": 3.0,
+          "type": "QUANTITY",
+          "maxQuantity": 10
+        },
+        {
+          "id": "3682587",
+          "name": "Handtücher",
+          "price": 0.0,
+          "type": "QUANTITY",
+          "maxQuantity": 10
+        },
+        {
+          "id": "3682586",
+          "name": "Bettwäsche einmalig Anz.",
+          "price": 0.0,
+          "type": "QUANTITY",
+          "maxQuantity": 10
+        }
+      ],
+      "conditions": [
+        {
+          "name": "Example",
+          "description": "Example description",
+          "value": "Example value",
+          "price": 22.50,
+          "type": "Example type"
+        }
+      ],
+      "infotext": "Info",
+      "reservationType": "STANDARD",
+      "reservationRejectionPeriod": 10,
+      "rateId": 20,
+      "rateDescription": [
+        "One"
+      ]
+    }
+  ],
+  "roomsNotBookable": {
+    "roomId": "1234",
+    "notBookableReasonIds": [
+      "22",
+      "44"
+    ]
+  },
+  "documents": [
+    {
+      "documentType": "AGB",
+      "description": "Allgemeine Geschäftsbedingungen",
+      "url": "https://de.holidayinsider.com/document/agb/6-44218"
+    }
+  ],
+  "currency": "EUR",
+  "guestRemarkSupported": true,
+  "allGuestInfoNecessary": false,
+  "durationMs": 455,
+  "requestInfo": {
+    "applicationVersion": "1.433",
+    "requestId": "d8b4a735-7daa-43ab-a0b0-fba4fa72aab9",
+    "timestamp": 1579510015147
+  }
+}

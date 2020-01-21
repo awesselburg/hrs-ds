@@ -2,31 +2,36 @@
 
 namespace MyPortal\HRS_Api\V2\Request;
 
-use MyPortal\HRS_Api\Helper\Object;
-use MyPortal\HRS_Api\V2\Request\Schema\RoomDetailCriteria;
-use MyPortal\HRS_Api\V2\Request\Schema\TravelCriteria;
+use MyPortal\HRS_Api\Helper\Model;
+use MyPortal\HRS_Api\V2\Schema\RoomDetailCriteria;
+use MyPortal\HRS_Api\V2\Schema\TravelCriteria;
 
 /**
  * Class DetailSearchRequest
  *
  * @package MyPortal\HRS_Api\V2\Request
  */
-class DetailSearchRequest extends Object
+class DetailSearchRequest extends Model
 {
     /**
      * @var bool
      */
-    protected $addNotBookableReasons;
+    public $addNotBookableReasons;
 
     /**
      * @var RoomDetailCriteria
      */
-    protected $accommodation;
+    public $accommodation;
 
     /**
-     * @var TravelCriteria
+     * @var  TravelCriteria
      */
-    protected $searchCriteria;
+    public $searchCriteria;
+
+    /**
+     * @var string
+     */
+    public $customerIp;
 
     /**
      * DetailSearchRequest constructor.
@@ -83,5 +88,21 @@ class DetailSearchRequest extends Object
     public function setSearchCriteria(TravelCriteria $searchCriteria)
     {
         $this->searchCriteria = $searchCriteria;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCustomerIp()
+    {
+        return $this->customerIp;
+    }
+
+    /**
+     * @param string $customerIp
+     */
+    public function setCustomerIp($customerIp)
+    {
+        $this->customerIp = $customerIp;
     }
 }

@@ -2,31 +2,36 @@
 
 namespace MyPortal\HRS_Api\V2\Request;
 
-use MyPortal\HRS_Api\Helper\Object;
-use MyPortal\HRS_Api\V2\Request\Schema\AccommodationDetailCriteria;
-use MyPortal\HRS_Api\V2\Request\Schema\TravelCriteria;
+use MyPortal\HRS_Api\Helper\Model;
+use MyPortal\HRS_Api\V2\Schema\AccommodationDetailCriteria;
+use MyPortal\HRS_Api\V2\Schema\TravelCriteria;
 
 /**
  * Class AvailabilitySearchRequest
  *
  * @package MyPortal\HRS_Api\V2\Request
  */
-class AvailabilitySearchRequest extends Object
+class AvailabilitySearchRequest extends Model
 {
     /**
      * @var AccommodationDetailCriteria
      */
-    protected $accommodation;
+    public $accommodation;
 
     /**
      * @var TravelCriteria
      */
-    protected $searchCriteria;
+    public $searchCriteria;
 
     /**
      * @var int
      */
-    protected $timeoutMs;
+    public $timeoutMs;
+
+    /**
+     * @var string
+     */
+    public $customerIp;
 
     /**
      * AvailabilitySearchRequest constructor.
@@ -85,5 +90,21 @@ class AvailabilitySearchRequest extends Object
     public function setTimeoutMs($timeoutMs)
     {
         $this->timeoutMs = $timeoutMs;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCustomerIp()
+    {
+        return $this->customerIp;
+    }
+
+    /**
+     * @param string $customerIp
+     */
+    public function setCustomerIp($customerIp)
+    {
+        $this->customerIp = $customerIp;
     }
 }
