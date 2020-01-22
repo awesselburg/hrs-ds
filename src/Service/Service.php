@@ -7,7 +7,7 @@ use MyPortal\HRS_Api\Helper\Model;
 
 class Service
 {
-    const URI = '';
+    const URI    = '';
     const METHOD = 'POST';
 
     /**
@@ -36,22 +36,6 @@ class Service
         $this->requestObject = new Model();
     }
 
-    /**
-     * @return Model
-     */
-    public function getRequestObject()
-    {
-        return $this->requestObject;
-    }
-
-    /**
-     * @param Model $requestObject
-     */
-    public function setRequestObject($requestObject)
-    {
-        $this->requestObject = $requestObject;
-    }
-    
     /**
      * @return Model
      */
@@ -87,8 +71,32 @@ class Service
     /**
      * @return string
      */
+    public function getJsonPayload()
+    {
+        return \GuzzleHttp\json_encode($this->getRequestObject()->createPayload());
+    }
+
+    /**
+     * @return Model
+     */
+    public function getRequestObject()
+    {
+        return $this->requestObject;
+    }
+
+    /**
+     * @param Model $requestObject
+     */
+    public function setRequestObject($requestObject)
+    {
+        $this->requestObject = $requestObject;
+    }
+
+    /**
+     * @return array
+     */
     public function getPayload()
     {
-        return \GuzzleHttp\json_encode($this->getRequestObject()->createJsonPayload());
+        return $this->getRequestObject()->createPayload();
     }
 }
